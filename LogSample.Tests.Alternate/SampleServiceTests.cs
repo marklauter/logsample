@@ -1,4 +1,3 @@
-using LogSample.Library;
 using Xunit.Abstractions;
 
 namespace LogSample.Tests.XUnit

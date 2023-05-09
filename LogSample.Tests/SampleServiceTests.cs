@@ -1,4 +1,3 @@
-using LogSample.Library;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 using Serilog.Exceptions;
