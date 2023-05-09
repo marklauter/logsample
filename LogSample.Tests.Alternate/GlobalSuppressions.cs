@@ -6,5 +6,3 @@
 using System.Diagnostics.CodeAnalysis;
 
 [assembly: SuppressMessage("Naming", "CA1707:Identifiers should not contain underscores", Justification = "unit tests")]
-[assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "must be instance method for dependency injection to work", Scope = "member", Target = "~M:LogSample.Tests.Alternate.Startup.Configure(Microsoft.Extensions.Logging.ILoggerFactory,Xunit.DependencyInjection.ITestOutputHelperAccessor)")]
-[assembly: SuppressMessage("Performance", "CA1822:Mark members as static", Justification = "must be instance method for dependency injection to work", Scope = "member", Target = "~M:LogSample.Tests.Alternate.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)")]

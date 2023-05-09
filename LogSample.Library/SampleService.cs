@@ -25,18 +25,22 @@ namespace LogSample.Library
             try
             {
                 this.logger.LogInformation("{@Data}", data);
-                throw new SampleException("fail")
-                {
-                    Data = { { "SampleData", data } }
-                };
+
+                throw new SampleOuterException(
+                    $"fail: {nameof(SampleOuterException)}",
+                    new SampleInnerException($"fail: {nameof(SampleInnerException)}")
+                    {
+                        Data = { { "SampleData", data } }
+                    });
             }
-            catch (SampleException ex)
+            catch (SampleOuterException ex)
             {
                 this.logger.LogError(ex, "can't do the thing with this data: {@Data}", data);
             }
             catch (Exception ex)
             {
-                this.logger.LogCritical(ex, "unexpected exception. system abort time.");
+                this.logger.LogCritical(ex, "unexpected exception while doing the thing. system abort time.");
+                throw;
             }
         }
     }

@@ -1,0 +1,62 @@
+﻿{
+  "@t": "2023-05-09T18:05:09.3801459Z",
+  "@mt": "{MethodName}",
+  "@l": "Debug",
+  "MethodName": "ctor",
+  "SourceContext": "LogSample.Library.SampleService",
+  "Application.Name": "LogSample.Console",
+  "Application.Version": "1.0.0.0"
+}
+{
+  "@t": "2023-05-09T18:05:09.3989301Z",
+  "@mt": "{@Data}",
+  "Data": {
+    "Id": "7b820b17-cf20-48d1-a2fc-d8d1c015d6a2",
+    "Name": "SampleData",
+    "TimestampUtc": "2023-05-09T18:05:09.3927386Z",
+    "$type": "SampleData"
+  },
+  "SourceContext": "LogSample.Library.SampleService",
+  "MethodName": "Fail",
+  "Scope": [ "Fail" ],
+  "Application.Name": "LogSample.Console",
+  "Application.Version": "1.0.0.0"
+}
+{
+  "@t": "2023-05-09T18:05:09.4206723Z",
+  "@mt": "can't do the thing with this data: {@Data}",
+  "@l": "Error",
+  "@x": "LogSample.Library.SampleOuterException: fail: SampleOuterException\r\n ---> LogSample.Library.SampleInnerException: fail: SampleInnerException\r\n   --- End of inner exception stack trace ---\r\n   at LogSample.Library.SampleService.Fail(SampleData data) in D:\\dev\\ls\\logsample\\LogSample.Library\\SampleService.cs:line 29",
+  "Data": {
+    "Id": "7b820b17-cf20-48d1-a2fc-d8d1c015d6a2",
+    "Name": "SampleData",
+    "TimestampUtc": "2023-05-09T18:05:09.3927386Z",
+    "$type": "SampleData"
+  },
+  "SourceContext": "LogSample.Library.SampleService",
+  "MethodName": "Fail",
+  "Scope": [ "Fail" ],
+  "ExceptionDetail": {
+    "HResult": -2146233088,
+    "Message": "fail: SampleOuterException",
+    "Source": "LogSample.Library",
+    "TargetSite": "Void Fail(LogSample.Library.SampleData)",
+    "InnerException": {
+      "Data": {
+        "SampleData": {
+          "Id": "7b820b17-cf20-48d1-a2fc-d8d1c015d6a2",
+          "Name": "SampleData",
+          "TimestampUtc": "2023-05-09T18:05:09.3927386Z",
+          "$type": "SampleData"
+        }
+      },
+      "HResult": -2146233088,
+      "Message": "fail: SampleInnerException",
+      "Source": null,
+      "Type": "LogSample.Library.SampleInnerException"
+    },
+    "Type": "LogSample.Library.SampleOuterException"
+  },
+  "Application.Name": "LogSample.Console",
+  "Application.Version": "1.0.0.0"
+}
