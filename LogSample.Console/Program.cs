@@ -14,6 +14,9 @@ using var host = Host.CreateDefaultBuilder(args)
             .Enrich.FromLogContext()
             .Enrich.WithExceptionDetails()
             .WriteTo.Console(formatter: new CompactJsonFormatter())
+#if DEBUG
+            .WriteTo.Debug(formatter: new CompactJsonFormatter())
+#endif
             .ReadFrom.Configuration(builderContext.Configuration)
             .Enrich.WithProperty("Application.Name", "LogSample.Console")
             .Enrich.WithProperty("Application.Version", Assembly.GetExecutingAssembly().GetName().Version?.ToString() ?? "local-debug"))
