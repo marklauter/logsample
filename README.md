@@ -2,7 +2,9 @@
 This solution provides simple logging samples using Microsoft.Extensions.Logging, Serilog, and XunitTestOutputLoggerProvider.
 There are four projects in this solution: LogSample.Console, LogSample.Library, LogSample.Tests.Serilog, and LogSample.Tests.XUnit.
 
-## Documentation
+## Related Documentation
+### Observability and Logging Guidance for Developers
+https://github.com/marklauter/logsample/blob/main/Effective%20Logging%20for%20Optimal%20Observability.pdf
 ### Microsoft.Extensions.Logging
 https://learn.microsoft.com/en-us/dotnet/core/extensions/logging
 ### Serilog
