@@ -13,12 +13,18 @@ namespace LogSample.Library
             this.logger.LogDebug("{MethodName}", "ctor");
         }
 
+        private const string Template = "This is a {Level} message.";
+
         public void Succeed(SampleData data)
         {
             using var logScope = this.logger.BeginScope("{MethodName}", nameof(Succeed));
 
-            this.logger.LogTrace("This is a {Level} message.", LogLevel.Trace);
-            this.logger.LogDebug("This is a {Level} message.", LogLevel.Debug);
+            this.logger.LogTrace(Template, LogLevel.Trace); // const okay
+
+            this.logger.LogTrace("This is a {Level} message.", LogLevel.Trace); // literal preferred
+            this.logger.LogDebug("This is a {Level} message.", LogLevel.Debug); // literal preferred
+
+            this.logger.LogTrace($"This is a {LogLevel.Trace} message."); // interpolated is a fail - don't do this
 
             this.logger.LogInformation("info: {@Data}", data);
         }
