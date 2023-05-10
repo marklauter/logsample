@@ -1,5 +1,4 @@
-﻿using LogSample.Library;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 using Serilog;
 
 namespace LogSample.Tests.Serilog

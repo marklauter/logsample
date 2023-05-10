@@ -31,15 +31,17 @@ namespace LogSample.Tests.Serilog
             this.sampleService = serviceProvider.GetRequiredService<ISampleService>();
         }
 
-        [Fact]
         public void Succeed_Succeeds()
         {
-            var id = Guid.NewGuid();
-            this.sampleService.Succeed(new SampleData(id, nameof(Succeed_Succeeds), DateTime.UtcNow));
+            var sampleData = new SampleData(
+                Guid.NewGuid(),
+                nameof(Succeed_Succeeds),
+                DateTime.UtcNow);
+            this.sampleService.Succeed(sampleData);
 
             var stdout = ((Xunit.Sdk.TestOutputHelper)this.output).Output;
             Assert.Contains("SampleData", stdout);
-            Assert.Contains(id.ToString(), stdout);
+            Assert.Contains(sampleData.Id.ToString(), stdout);
         }
     }
 }
