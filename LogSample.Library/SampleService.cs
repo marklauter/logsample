@@ -16,7 +16,11 @@ namespace LogSample.Library
         public void Succeed(SampleData data)
         {
             using var logScope = this.logger.BeginScope("{MethodName}", nameof(Succeed));
-            this.logger.LogInformation("{@Data}", data);
+
+            this.logger.LogTrace("This is a {Level} message.", LogLevel.Trace);
+            this.logger.LogDebug("This is a {Level} message.", LogLevel.Debug);
+
+            this.logger.LogInformation("info: {@Data}", data);
         }
 
         public void Fail(SampleData data)
@@ -35,7 +39,7 @@ namespace LogSample.Library
             }
             catch (SampleOuterException ex)
             {
-                this.logger.LogError(ex, "can't do the thing with this data: {@Data}", data);
+                this.logger.LogWarning(ex, "can't do the thing with this data: {@Data}", data);
             }
             catch (Exception ex)
             {
