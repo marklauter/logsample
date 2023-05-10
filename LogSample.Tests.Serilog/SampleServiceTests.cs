@@ -31,6 +31,7 @@ namespace LogSample.Tests.Serilog
             this.sampleService = serviceProvider.GetRequiredService<ISampleService>();
         }
 
+        [Fact]
         public void Succeed_Succeeds()
         {
             var sampleData = new SampleData(
